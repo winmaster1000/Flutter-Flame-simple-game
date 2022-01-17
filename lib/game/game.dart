@@ -87,13 +87,15 @@ class SpaceGame extends FlameGame with PanDetector {
 
   @override
   void onPanEnd(DragEndInfo info) {
-    _pointerStartPosition = null;
-    _pointerCurrentPosition = null;
-    player.setMoveDirection(Vector2.zero());
+    setDefaultPosition();
   }
 
   @override
   void onPanCancel() {
+    setDefaultPosition();
+  }
+
+  void setDefaultPosition() {
     _pointerStartPosition = null;
     _pointerCurrentPosition = null;
     player.setMoveDirection(Vector2.zero());
